@@ -1,0 +1,30 @@
+{
+  "name": "Cognition",
+  "description": "Cognition",
+  "homepage": "",
+  "version": "0.1.0",
+  "author": "@designerzen",
+  "license": "GPL-2.0",
+  "private": true,
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "visualisation",
+    "infographic",
+    "d3"
+  ],
+  "bugs": {},
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "start": "http-server ./source -p 3000"
+  }
+}
