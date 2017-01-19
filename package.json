@@ -1,6 +1,6 @@
 {
   "name": "Cognition",
-  "description": "Cognition",
+  "description": "Cognition biases",
   "homepage": "",
   "version": "0.1.0",
   "author": "@designerzen",
@@ -21,10 +21,12 @@
   ],
   "bugs": {},
   "devDependencies": {
+    "gh-pages": "^0.12.0",
     "http-server": "^0.9.0"
   },
   "dependencies": {},
   "scripts": {
-    "start": "http-server ./source -p 3000"
+    "start": "http-server ./source -p 3000",
+    "deploy": "node run deploy.js"
   }
 }
