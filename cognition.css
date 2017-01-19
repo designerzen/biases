@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif:400,400i,700,700i');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	line-height: 1.5;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+}
+
+test{
+    max-width:100%;
+    max-height:100%;
+}
+
+.wallpaper{
+    fill:transparent;
+}
+
+svg{
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	display: -webkit-flex;
+	display: flex;
+    margin: auto;
+}
+
+/* texts */
+text {
+    font-size: 6px;
+    transition:fill 400ms ease-out;
+    user-select:none;
+    text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.heading, .subheading, .title{
+    font-family: 'Noto Serif', serif;
+    font-weight: 700;
+}
+
+.heading{
+    font-size: 26px;
+    text-transform: capitalize;
+}
+.subheading{
+    font-size: 14px;
+    font-weight: 700;
+    font-style:italic;
+}
+.title{
+    font-family: 'Noto Serif', serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.1em;
+    /*fill:#333;*/
+}
+.trait{
+    font-size: 7px;
+    letter-spacing: 0.1em;
+}
+.description{
+    max-width: 20ch;
+    font-weight: 700;
+    width:5em;
+}
+.legend{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.description-ring{
+    /*stroke: #03163C;*/
+    stroke-opacity: 0.4;
+    stroke-width: 1px;
+}
+
+/* circles */
+.node .blob {
+    /*fill: #999;*/
+    opacity: 0.4;
+    transition: opacity 400ms ease-out, fill 400ms ease-out;
+}
+
+/* The lines that join one node to the next */
+.node .connection {
+    fill: none;
+    /*stroke: #03163C;*/
+    stroke-opacity: 0.4;
+    stroke-width: 1px;
+    transition:stroke 200ms ease-out, stroke-opacity 200ms ease-out;
+}
+
+/* Hover states for the mouse overs */
+.node:hover{
+    cursor: pointer;
+}
+
+.node:hover text{
+    fill:#000;
+}
+.node:hover .trait{
+    /*fill:#000;*/
+}
+
+.node:hover .blob{
+    /*fill: #056F57;*/
+    opacity: 1;
+}
+
+.node:hover .connection {
+    stroke-opacity: 1;
+}
