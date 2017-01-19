@@ -67,12 +67,12 @@ var
         duration : {
             lines:25,
             circles:500,
-            nodes:1000
+            nodes:400
         },
         delay : {
-            lines:20,
-            circles:300,
-            nodes:150
+            lines:15,
+            circles:30,
+            nodes:50
         }
   };
 
@@ -478,9 +478,9 @@ var draw = function( data, depth )
             // set the text from the name of the JSON node
             .text(function(t,i) {
                 return t.data.name;
-            });
+            })
             // text wrap but preserve positions!
-            //.call(wrap);
+            .call(wrap);
 
     /*
 
@@ -605,7 +605,7 @@ var render = function( data )
             //.attr( "x", centerX-(dataRadius/2) )
             // the 6 here is just to align it with the outer size of the circles
             .attr( "x", padding )
-            .attr( "y", padding + 40 )
+            .attr( "y", padding + 12 )
             .attr( "class", "subheading")
             .style( "text-anchor", "start" )
             // animate :)
