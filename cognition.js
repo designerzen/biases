@@ -1,3 +1,5 @@
+var BIASES = function(){
+
 /* Polyfills and utilities */
 var selectAndCopyText = function( element )
 {
@@ -29,51 +31,50 @@ node.value - the summed value of the node and its descendants; optional, set by 
 
 */
 
-// TODO : encapsulate in closure
 var
-    // config
-    showNumbers = false,
-    dataFile = "cognition.json",
-    svg = d3.select("svg"),
-	// dimensions +convert to number
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    minSize = 800,
-    textBoxWidth = 60,
-    textBoxHeight = 200,
-    // general spacing
-    padding = 30,
-    // middle of the diagram
-    centerX = width / 2,
-    centerY = height / 2,
-    // radius of overall graph
-	radius = width / 2,
-    // tree radius
-	dataRadius = radius * 0.5,
-    // description distance from centre
-	titleRadius = radius * 0.5,
-	ringRadius = radius * 0.85,
-    bubbleRadius = 8,
-    // each little node circle
-	nodeRadius = "0.2%",
-    // how many degrees around do we draw on the tree
-    coverage = 360 - (30),
-    // cache the DOM elements
-    elements = {},
-    // JSON data
-    loadedData,
-    timings = {
+  // config
+  showNumbers = false,
+  dataFile = "cognition.json",
+  svg = d3.select("svg"),
+  // dimensions +convert to number
+  width = +svg.attr("width"),
+  height = +svg.attr("height"),
+  minSize = 800,
+  textBoxWidth = 60,
+  textBoxHeight = 200,
+  // general spacing
+  padding = 30,
+  // middle of the diagram
+  centerX = width / 2,
+  centerY = height / 2,
+  // radius of overall graph
+  radius = width / 2,
+  // tree radius
+  dataRadius = radius * 0.5,
+  // description distance from centre
+  titleRadius = radius * 0.5,
+  ringRadius = radius * 0.85,
+  bubbleRadius = 8,
+  // each little node circle
+  nodeRadius = "0.2%",
+  // how many degrees around do we draw on the tree
+  coverage = 360 - (30),
+  // cache the DOM elements
+  elements = {},
+  // JSON data
+  loadedData,
+  timings = {
         duration : {
-            lines:45,
-            circles:800,
-            nodes:1000
+            lines:25,
+            circles:500,
+            nodes:400
         },
         delay : {
-            lines:24,
-            circles:400,
-            nodes:200
+            lines:15,
+            circles:30,
+            nodes:50
         }
-    };
+  };
 
     /*
     ,
@@ -477,9 +478,9 @@ var draw = function( data, depth )
             // set the text from the name of the JSON node
             .text(function(t,i) {
                 return t.data.name;
-            });
+            })
             // text wrap but preserve positions!
-            //.call(wrap);
+            .call(wrap);
 
     /*
 
@@ -604,7 +605,7 @@ var render = function( data )
             //.attr( "x", centerX-(dataRadius/2) )
             // the 6 here is just to align it with the outer size of the circles
             .attr( "x", padding )
-            .attr( "y", padding + 40 )
+            .attr( "y", padding + 12 )
             .attr( "class", "subheading")
             .style( "text-anchor", "start" )
             // animate :)
@@ -631,3 +632,5 @@ d3.json( dataFile, render );
 // resize...
 window.addEventListener('resize', resize, true);
 resize();
+
+}();
